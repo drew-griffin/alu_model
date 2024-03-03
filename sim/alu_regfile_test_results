@@ -1,0 +1,118 @@
+run -all
+# Welcome to Drew Seidel's ALU/Register File Design For ECE 508 (SystemVerilog Workshop Fall 2022)
+# Sources: N:/ece508/dseidel/hw1/problem1
+# 
+# Testing register file by walking a 1 through all of the locations
+# initializing register file to 00
+# register file initialization complete
+# Writing 00000001 to regfile[ 0]
+# Writing 00000010 to regfile[ 1]
+# Writing 00000100 to regfile[ 2]
+# Writing 00001000 to regfile[ 3]
+# Writing 00010000 to regfile[ 4]
+# Writing 00100000 to regfile[ 5]
+# Writing 01000000 to regfile[ 6]
+# Writing 10000000 to regfile[ 7]
+# Writing 00000001 to regfile[ 8]
+# Writing 00000010 to regfile[ 9]
+# Writing 00000100 to regfile[10]
+# Writing 00001000 to regfile[11]
+# Writing 00010000 to regfile[12]
+# Writing 00100000 to regfile[13]
+# Writing 01000000 to regfile[14]
+# Writing 10000000 to regfile[15]
+# 
+# Check functionality by manually examining the register file contents
+# Contents of the Register file are:
+# regfile[ 0]: 00000001
+# regfile[ 1]: 00000010
+# regfile[ 2]: 00000100
+# regfile[ 3]: 00001000
+# regfile[ 4]: 00010000
+# regfile[ 5]: 00100000
+# regfile[ 6]: 01000000
+# regfile[ 7]: 10000000
+# regfile[ 8]: 00000001
+# regfile[ 9]: 00000010
+# regfile[10]: 00000100
+# regfile[11]: 00001000
+# regfile[12]: 00010000
+# regfile[13]: 00100000
+# regfile[14]: 01000000
+# regfile[15]: 10000000
+# -----------------------------------
+# 
+# 
+# ALU Test - This is rudimentary
+# initializing register file to 00
+# register file initialization complete
+# Setting carry in to 0
+# operation:       ADD_OP	 A_In: 01010101, B_In: 10101010, ALU_Out: 11111111
+# operation:       SUB_OP	 A_In: 01010101, B_In: 10101010, ALU_Out: 10101010
+# operation:      NOTA_OP	 A_In: 01010101, B_In: 10101010, ALU_Out: 10101010
+# operation:      ORAB_OP	 A_In: 01010101, B_In: 10101010, ALU_Out: 11111111
+# operation:     ANDAB_OP	 A_In: 01010101, B_In: 10101010, ALU_Out: 00000000
+# operation:     NOTAB_OP	 A_In: 01010101, B_In: 10101010, ALU_Out: 10101010
+# operation:      EXOR_OP	 A_In: 01010101, B_In: 10101010, ALU_Out: 11111111
+# operation:     EXNOR_OP	 A_In: 01010101, B_In: 10101010, ALU_Out: 00000000
+# 
+# Check functionality  with c_in = 0 by manually examining the register file
+# Contents of the Register file are:
+# regfile[ 0]: 01010101
+# regfile[ 1]: 10101010
+# regfile[ 2]: 00000000
+# regfile[ 3]: 00000000
+# regfile[ 4]: 00000000
+# regfile[ 5]: 11111111
+# regfile[ 6]: 10101010
+# regfile[ 7]: 10101010
+# regfile[ 8]: 11111111
+# regfile[ 9]: 00000000
+# regfile[10]: 10101010
+# regfile[11]: 11111111
+# regfile[12]: 00000000
+# regfile[13]: 00000000
+# regfile[14]: 00000000
+# regfile[15]: 00000000
+# -----------------------------------
+# Setting carry in to 1
+# operation:       ADD_OP	 A_In: 00000000, B_In: 10101010, ALU_Out: 10101011
+# operation:       SUB_OP	 A_In: 00000000, B_In: 10101010, ALU_Out: 01010110
+# operation:      NOTA_OP	 A_In: 00000000, B_In: 10101010, ALU_Out: 11111111
+# operation:      ORAB_OP	 A_In: 00000000, B_In: 10101010, ALU_Out: 10101010
+# operation:     ANDAB_OP	 A_In: 00000000, B_In: 10101010, ALU_Out: 00000000
+# operation:     NOTAB_OP	 A_In: 00000000, B_In: 10101010, ALU_Out: 10101010
+# operation:      EXOR_OP	 A_In: 00000000, B_In: 10101010, ALU_Out: 10101010
+# operation:     EXNOR_OP	 A_In: 00000000, B_In: 10101010, ALU_Out: 01010101
+# 
+# Check functionality  with c_in = 1 by manually examining the register file
+# Contents of the Register file are:
+# regfile[ 0]: 01010101
+# regfile[ 1]: 10101010
+# regfile[ 2]: 00000000
+# regfile[ 3]: 00000000
+# regfile[ 4]: 00000000
+# regfile[ 5]: 10101011
+# regfile[ 6]: 01010110
+# regfile[ 7]: 11111111
+# regfile[ 8]: 10101010
+# regfile[ 9]: 00000000
+# regfile[10]: 10101010
+# regfile[11]: 10101010
+# regfile[12]: 01010101
+# regfile[13]: 00000000
+# regfile[14]: 00000000
+# regfile[15]: 00000000
+# -----------------------------------
+# initializing register file to 00
+# register file initialization complete
+# ALU Operation: 0xF0 + 0x12 = 0x02	 Carry out(expected): 1(1)
+# ALU Operation: 0x80 + 0x12 = 0x92	 Carry out(expected): 0(0)
+# 
+# Thank you for joining us on this journey.
+# We hope you enjoyed your time on this flight.
+# Now terminating Drew's ALU/Register file simulation.
+# 
+# ** Note: $stop    : N:/ece508/dseidel/hw1/problem1/hdl/tb_alu_regflle.sv(251)
+#    Time: 2005 ns  Iteration: 1  Instance: /tb_alu_regfile
+# Break in NamedBeginStat stimulus at N:/ece508/dseidel/hw1/problem1/hdl/tb_alu_regflle.sv line 251
